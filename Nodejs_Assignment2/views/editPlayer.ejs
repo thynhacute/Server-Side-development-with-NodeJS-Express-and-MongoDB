@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./patials/head') %>
+
+    <body>
+        <form method="post">
+            <div style="width: 50%; margin: 0 auto;">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Name</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="width: 500px;">
+                                <input class="input is-info" name="name" type="text" value="<%= player.name %>" required>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Club</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field is-narrow">
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select name="club">
+                                        <%for (let club of clubList){ %>
+                                            <option value="<%= club.name %>"
+                                                <%=JSON.stringify(club.name)===JSON.stringify(player.club) ? 'selected'
+                                                : '' %>><%= club.name %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Image</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="width: 500px;">
+                                <input class="input is-info" name="image" type="text" value="<%= player.image %>" required>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Position</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field is-narrow">
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select name="position">
+                                        <%for (let position of positionList){ %>
+                                            <option value="<%= position.name %>"
+                                                <%=JSON.stringify(position.name)===JSON.stringify(player.position)
+                                                ? 'selected' : '' %>><%= position.name %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Goals</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="width: 500px">
+                                <input class=" input is-info" name="goals" type="number" value="<%= player.goals %>" required>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">isCaptain</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox" style="margin-top: 10px;">
+                                    <input type="checkbox" value="true" name="isCaptain" <%=player.isCaptain ? 'checked'
+                                        : '' %>>
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="margin-left: 380px; margin-top: 20px;">
+                                <button class="button is-primary" type="submit">
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+    <style>
+        body {
+            background-image: url(https://cdn.dribbble.com/users/2399335/screenshots/14689261/d_glass-morphism_card_1080p_4x.png); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        html {
+        height: 100%;
+        }
+    </style>
+</html>

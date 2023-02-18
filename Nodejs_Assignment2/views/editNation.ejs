@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./patials/head') %>
+
+    <body>
+        <form method="post">
+            <div style="width: 50%; margin: 0 auto;
+                        margin-top: 30px;">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Name</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="width: 600px">
+                                <input class="input is-info" name="name" type="text" value="<%= nation.name %>" required>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Description</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="width: 600px">
+                                <input class="input is-info" name="description" type="text"
+                                    value="<%= nation.description %>" required>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control" style="margin-left: 380px; margin-top: 20px;">
+                                <button class="button is-primary" type="submit" >
+                                    Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+    <style>
+        body {
+            background-image: url(https://cdn.dribbble.com/users/2399335/screenshots/14689261/d_glass-morphism_card_1080p_4x.png); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        html {
+        height: 100%;
+        }
+    </style>
+</html>

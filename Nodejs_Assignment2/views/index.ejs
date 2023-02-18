@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <%- include ('./patials/head') %>
+  <body>
+    <section>
+      <div class="color"></div>
+      <div class="color"></div>
+      <div class="color"></div>
+      <div class="box">
+        <div class="square" style="--i: 0"></div>
+        <div class="square" style="--i: 1"></div>
+        <div class="square" style="--i: 2"></div>
+        <div class="square" style="--i: 3"></div>
+        <div class="square" style="--i: 4"></div>
+        <div class="container">
+          <div class="form">
+            <h2 class="intro-home" style="color: #ff359b;">Xin chào cả nhà</h2>
+            <p class="intro-home">Tui là trang home nha</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <style>
+    body {
+      background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s--RNNNA7AE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://user-images.githubusercontent.com/69592270/101304060-72ff5b00-380d-11eb-8c58-a3172d791c9c.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+    }
+    html {
+      height: 100%;
+    }
+    .intro-home{
+        text-align: center;
+    }
+    .title {
+      text-align: center;
+      margin-top: 100px;
+    }
+    .btn-style {
+      background-color: #c2fbd7;
+      border-radius: 100px;
+      box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+        rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+        rgba(44, 187, 99, 0.15) 0 16px 32px;
+      color: green;
+      cursor: pointer;
+      display: inline-block;
+      font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto,
+        sans-serif;
+      padding: 7px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 250ms;
+      border: 0;
+      font-size: 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .btn-style:hover {
+      box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+        rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+        rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+        rgba(44, 187, 99, 0.25) 0 16px 32px;
+      transform: scale(1.05) rotate(-1deg);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      overflow: hidden;
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+    }
+    section .color {
+      position: absolute;
+      filter: blur(150px);
+    }
+    section .color:nth-child(1) {
+      top: -350px;
+      width: 600px;
+      height: 600px;
+      background: #ff359b;
+    }
+    section .color:nth-child(2) {
+      bottom: -150px;
+      left: 100px;
+      width: 500px;
+      height: 500px;
+      background: #fffd87;
+    }
+    section .color:nth-child(3) {
+      bottom: 50px;
+      right: 100px;
+      width: 300px;
+      height: 300px;
+      background: #00d2ff;
+    }
+    .box {
+      position: relative;
+    }
+    .box .square {
+      position: absolute;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      animation: animate 10s linear infinite;
+      animation-delay: calc(-1s * var());
+    }
+    @keyframes animate {
+      0%,
+      100% {
+        transform: translateY(-40px);
+      }
+      50% {
+        transform: translateY(40px);
+      }
+    }
+    .box .square:nth-child(1) {
+      top: -50px;
+      right: -60px;
+      width: 100px;
+      height: 100px;
+    }
+    .box .square:nth-child(2) {
+      top: 150px;
+      left: -100px;
+      width: 120px;
+      height: 120px;
+      z-index: 2;
+    }
+    .box .square:nth-child(3) {
+      bottom: 50px;
+      right: -60px;
+      width: 80px;
+      height: 80px;
+      z-index: 2;
+    }
+    .box .square:nth-child(4) {
+      bottom: -80px;
+      left: 100px;
+      width: 50px;
+      height: 50px;
+    }
+    .box .square:nth-child(5) {
+      top: -80px;
+      left: 140px;
+      width: 60px;
+      height: 60px;
+    }
+    .container {
+      position: relative;
+      width: 400px;
+      min-height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .form {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+    }
+    .form h2 {
+      position: relative;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+    }
+    .form h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 80px;
+      height: 4px;
+      background: #fff;
+    }
+    .form .inputBox {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .form .inputBox input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      border-radius: 35px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: black;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    .form .inputBox input::placeholder {
+      color: #fff;
+    }
+    .form .inputBox input[type="submit"] {
+      background: #fff;
+      color: #666;
+      max-width: 100px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+    .form .inputBox input[type="reset"] {
+      background: #fff;
+      color: #666;
+      max-width: 100px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .f1-effect {
+      position: relative;
+      z-index: 99999999;
+    }
+    .f1-effect .f1-effect-flower {
+      opacity: 1;
+      border-radius: 100%;
+      background: url(https://file.hstatic.net/200000259653/file/pages_17a8568517e94dcd9c8aec5587_570924d1fa4b4da1aa011044c9d7cc1c.png);
+      position: fixed;
+      top: -10%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+      -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+      -webkit-animation-duration: 10s, 3s;
+      -webkit-animation-timing-function: linear, ease-in-out;
+      -webkit-animation-iteration-count: infinite, infinite;
+      -webkit-animation-play-state: running, running;
+      animation-name: snowflakes-fall, snowflakes-shake;
+      animation-duration: 10s, 3s;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+      animation-play-state: running, running;
+    }
+    @media (max-width: 767px) {
+      .f1-effect .f1-effect-flower:nth-of-type(2n) {
+        display: none;
+      }
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(0) {
+      left: 5%;
+      -webkit-animation-delay: 1s, 1s;
+      animation-delay: 1s, 1s;
+      width: 16px;
+      height: 16px;
+      background-position: 0 -23px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(1) {
+      left: 10%;
+      -webkit-animation-delay: 6s, 0.5s;
+      animation-delay: 6s, 0.5s;
+      width: 13px;
+      height: 13px;
+      background-position: 0 -50px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(2) {
+      left: 20%;
+      -webkit-animation-delay: 4s, 2s;
+      animation-delay: 4s, 2s;
+      width: 15px;
+      height: 15px;
+      background-position: -49px -35px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(3) {
+      left: 30%;
+      -webkit-animation-delay: 2s, 2s;
+      animation-delay: 2s, 2s;
+      width: 14px;
+      height: 14px;
+      background-position: -31px 0;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(4) {
+      left: 40%;
+      -webkit-animation-delay: 8s, 3s;
+      animation-delay: 8s, 3s;
+      width: 16px;
+      height: 16px;
+      background-position: 0 -23px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(5) {
+      left: 50%;
+      -webkit-animation-delay: 6s, 2s;
+      animation-delay: 6s, 2s;
+      width: 13px;
+      height: 13px;
+      background-position: 0 -50px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(6) {
+      left: 60%;
+      -webkit-animation-delay: 2.5s, 1s;
+      animation-delay: 2.5s, 1s;
+      width: 15px;
+      height: 15px;
+      background-position: -49px -35px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(7) {
+      left: 70%;
+      -webkit-animation-delay: 1s, 0s;
+      animation-delay: 1s, 0s;
+      width: 14px;
+      height: 14px;
+      background-position: -31px 0;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(8) {
+      left: 80%;
+      -webkit-animation-delay: 2s, 2s;
+      animation-delay: 2s, 2s;
+      width: 14px;
+      height: 14px;
+      background-position: -31px 0;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(9) {
+      left: 90%;
+      -webkit-animation-delay: 8s, 3s;
+      animation-delay: 8s, 3s;
+      width: 16px;
+      height: 16px;
+      background-position: 0 -23px;
+    }
+    .f1-effect .f1-effect-flower:nth-of-type(10) {
+      left: 95%;
+      -webkit-animation-delay: 6s, 2s;
+      animation-delay: 6s, 2s;
+      width: 13px;
+      height: 13px;
+      background-position: 0 -50px;
+    }
+
+    @-webkit-keyframes snowflakes-fall {
+      0% {
+        top: -10%;
+      }
+      100% {
+        top: 100%;
+      }
+    }
+
+    @-webkit-keyframes snowflakes-shake {
+      0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+      }
+      50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px);
+      }
+      100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+      }
+    }
+
+    @keyframes snowflakes-fall {
+      0% {
+        top: -10%;
+      }
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes snowflakes-shake {
+      0% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(80px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+  </style>
+  <div class="f1-effect">
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+    <div class="f1-effect-flower">
+    </div>
+
+</div>
+</html>
